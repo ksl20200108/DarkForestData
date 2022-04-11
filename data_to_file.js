@@ -177,7 +177,7 @@ const func = async () => {
                     to: t.to,
                     from: t.from,
 
-                    data: JSON.stringify(decodedInst),
+                    // data: JSON.stringify(decodedInst),
                     name: decodedInst.name,
                     params: decodedInst.params,
 
