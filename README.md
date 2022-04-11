@@ -20,7 +20,7 @@ npm install --save ethers
 ### Download the data
 
 ```
-node get_decode_data.js &
+node data_to_file.js &
 
 ```
 
@@ -31,7 +31,7 @@ npm install --save ethers
 npm install --save abi-decoder
 npm install --save @gnosis.pm/gnosis-core-contracts
 npm install --save @darkforest_eth/contracts
-node decoder.js
+node data_to_file.js &
 
 ```
 
