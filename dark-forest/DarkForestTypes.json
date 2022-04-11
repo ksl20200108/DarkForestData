@@ -1,0 +1,1510 @@
+{
+  "fileName": "DarkForestTypes.sol",
+  "contractName": "DarkForestTypes",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.6.9;\n\nlibrary DarkForestTypes {\n    enum PlanetResource {NONE, SILVER}\n    enum PlanetEventType {ARRIVAL}\n    enum PlanetType {PLANET, TRADING_POST}\n\n    struct Planet {\n        address owner;\n        uint256 range;\n        uint256 population;\n        uint256 populationCap;\n        uint256 populationGrowth;\n        PlanetResource planetResource;\n        uint256 silverCap;\n        uint256 silverGrowth;\n        uint256 silver;\n        uint256 silverMax;\n        uint256 planetLevel;\n        PlanetType planetType;\n    }\n\n    struct PlanetExtendedInfo {\n        bool isInitialized;\n        uint256 version;\n        uint256 lastUpdated;\n        uint256 perlin;\n        uint256 upgradeState0;\n        uint256 upgradeState1;\n        uint256 upgradeState2;\n    }\n\n    struct PlanetEventMetadata {\n        uint256 id;\n        PlanetEventType eventType;\n        uint256 timeTrigger;\n        uint256 timeAdded;\n    }\n\n    struct ArrivalData {\n        uint256 id;\n        address player;\n        uint256 fromPlanet;\n        uint256 toPlanet;\n        uint256 popArriving;\n        uint256 silverMoved;\n        uint256 departureTime;\n        uint256 arrivalTime;\n    }\n\n    struct PlanetDefaultStats {\n        string label;\n        uint256 populationCap;\n        uint256 populationGrowth;\n        uint256 range;\n        uint256 silverGrowth;\n        uint256 silverCap;\n        uint256 silverMax;\n        uint256 barbarianPercentage;\n        uint256 energyCost;\n    }\n\n    struct Upgrade {\n        uint256 popCapMultiplier;\n        uint256 popGroMultiplier;\n        uint256 silverCapMultiplier;\n        uint256 silverGroMultiplier;\n        uint256 silverMaxMultiplier;\n        uint256 rangeMultiplier;\n        uint256 silverCostMultiplier;\n    }\n}\n",
+  "sourcePath": "contracts/core/DarkForestTypes.sol",
+  "sourceMap": "64:1730:11:-:0;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "64:1730:11:-:0;;;;;;;;",
+  "abi": [],
+  "ast": {
+    "absolutePath": "contracts/core/DarkForestTypes.sol",
+    "exportedSymbols": {
+      "DarkForestTypes": [
+        14587
+      ]
+    },
+    "id": 14588,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14478,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".9"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:11"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 14587,
+        "linearizedBaseContracts": [
+          14587
+        ],
+        "name": "DarkForestTypes",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "DarkForestTypes.PlanetResource",
+            "id": 14481,
+            "members": [
+              {
+                "id": 14479,
+                "name": "NONE",
+                "nodeType": "EnumValue",
+                "src": "115:4:11"
+              },
+              {
+                "id": 14480,
+                "name": "SILVER",
+                "nodeType": "EnumValue",
+                "src": "121:6:11"
+              }
+            ],
+            "name": "PlanetResource",
+            "nodeType": "EnumDefinition",
+            "src": "94:34:11"
+          },
+          {
+            "canonicalName": "DarkForestTypes.PlanetEventType",
+            "id": 14483,
+            "members": [
+              {
+                "id": 14482,
+                "name": "ARRIVAL",
+                "nodeType": "EnumValue",
+                "src": "155:7:11"
+              }
+            ],
+            "name": "PlanetEventType",
+            "nodeType": "EnumDefinition",
+            "src": "133:30:11"
+          },
+          {
+            "canonicalName": "DarkForestTypes.PlanetType",
+            "id": 14486,
+            "members": [
+              {
+                "id": 14484,
+                "name": "PLANET",
+                "nodeType": "EnumValue",
+                "src": "185:6:11"
+              },
+              {
+                "id": 14485,
+                "name": "TRADING_POST",
+                "nodeType": "EnumValue",
+                "src": "193:12:11"
+              }
+            ],
+            "name": "PlanetType",
+            "nodeType": "EnumDefinition",
+            "src": "168:38:11"
+          },
+          {
+            "canonicalName": "DarkForestTypes.Planet",
+            "id": 14511,
+            "members": [
+              {
+                "constant": false,
+                "id": 14488,
+                "mutability": "mutable",
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "236:13:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 14487,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "236:7:11",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14490,
+                "mutability": "mutable",
+                "name": "range",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "259:13:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14489,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "259:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14492,
+                "mutability": "mutable",
+                "name": "population",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "282:18:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14491,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "282:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14494,
+                "mutability": "mutable",
+                "name": "populationCap",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "310:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14493,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "310:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14496,
+                "mutability": "mutable",
+                "name": "populationGrowth",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "341:24:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14495,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "341:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14498,
+                "mutability": "mutable",
+                "name": "planetResource",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "375:29:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_PlanetResource_$14481",
+                  "typeString": "enum DarkForestTypes.PlanetResource"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 14497,
+                  "name": "PlanetResource",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 14481,
+                  "src": "375:14:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_PlanetResource_$14481",
+                    "typeString": "enum DarkForestTypes.PlanetResource"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14500,
+                "mutability": "mutable",
+                "name": "silverCap",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "414:17:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14499,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "414:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14502,
+                "mutability": "mutable",
+                "name": "silverGrowth",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "441:20:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14501,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "441:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14504,
+                "mutability": "mutable",
+                "name": "silver",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "471:14:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14503,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "471:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14506,
+                "mutability": "mutable",
+                "name": "silverMax",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "495:17:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14505,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "495:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14508,
+                "mutability": "mutable",
+                "name": "planetLevel",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "522:19:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14507,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "522:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14510,
+                "mutability": "mutable",
+                "name": "planetType",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14511,
+                "src": "551:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_PlanetType_$14486",
+                  "typeString": "enum DarkForestTypes.PlanetType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 14509,
+                  "name": "PlanetType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 14486,
+                  "src": "551:10:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_PlanetType_$14486",
+                    "typeString": "enum DarkForestTypes.PlanetType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Planet",
+            "nodeType": "StructDefinition",
+            "scope": 14587,
+            "src": "212:367:11",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DarkForestTypes.PlanetExtendedInfo",
+            "id": 14526,
+            "members": [
+              {
+                "constant": false,
+                "id": 14513,
+                "mutability": "mutable",
+                "name": "isInitialized",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "621:18:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 14512,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "621:4:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14515,
+                "mutability": "mutable",
+                "name": "version",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "649:15:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14514,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "649:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14517,
+                "mutability": "mutable",
+                "name": "lastUpdated",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "674:19:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14516,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "674:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14519,
+                "mutability": "mutable",
+                "name": "perlin",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "703:14:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14518,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "703:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14521,
+                "mutability": "mutable",
+                "name": "upgradeState0",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "727:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14520,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "727:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14523,
+                "mutability": "mutable",
+                "name": "upgradeState1",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "758:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14522,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "758:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14525,
+                "mutability": "mutable",
+                "name": "upgradeState2",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14526,
+                "src": "789:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14524,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "789:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PlanetExtendedInfo",
+            "nodeType": "StructDefinition",
+            "scope": 14587,
+            "src": "585:232:11",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DarkForestTypes.PlanetEventMetadata",
+            "id": 14535,
+            "members": [
+              {
+                "constant": false,
+                "id": 14528,
+                "mutability": "mutable",
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14535,
+                "src": "860:10:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14527,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "860:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14530,
+                "mutability": "mutable",
+                "name": "eventType",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14535,
+                "src": "880:25:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_PlanetEventType_$14483",
+                  "typeString": "enum DarkForestTypes.PlanetEventType"
+                },
+                "typeName": {
+                  "contractScope": null,
+                  "id": 14529,
+                  "name": "PlanetEventType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 14483,
+                  "src": "880:15:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_PlanetEventType_$14483",
+                    "typeString": "enum DarkForestTypes.PlanetEventType"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14532,
+                "mutability": "mutable",
+                "name": "timeTrigger",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14535,
+                "src": "915:19:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14531,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "915:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14534,
+                "mutability": "mutable",
+                "name": "timeAdded",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14535,
+                "src": "944:17:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14533,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "944:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PlanetEventMetadata",
+            "nodeType": "StructDefinition",
+            "scope": 14587,
+            "src": "823:145:11",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DarkForestTypes.ArrivalData",
+            "id": 14552,
+            "members": [
+              {
+                "constant": false,
+                "id": 14537,
+                "mutability": "mutable",
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1003:10:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14536,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1003:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14539,
+                "mutability": "mutable",
+                "name": "player",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1023:14:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 14538,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1023:7:11",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14541,
+                "mutability": "mutable",
+                "name": "fromPlanet",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1047:18:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14540,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1047:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14543,
+                "mutability": "mutable",
+                "name": "toPlanet",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1075:16:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14542,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1075:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14545,
+                "mutability": "mutable",
+                "name": "popArriving",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1101:19:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14544,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1101:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14547,
+                "mutability": "mutable",
+                "name": "silverMoved",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1130:19:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14546,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1130:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14549,
+                "mutability": "mutable",
+                "name": "departureTime",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1159:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14548,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1159:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14551,
+                "mutability": "mutable",
+                "name": "arrivalTime",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14552,
+                "src": "1190:19:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14550,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1190:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "ArrivalData",
+            "nodeType": "StructDefinition",
+            "scope": 14587,
+            "src": "974:242:11",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DarkForestTypes.PlanetDefaultStats",
+            "id": 14571,
+            "members": [
+              {
+                "constant": false,
+                "id": 14554,
+                "mutability": "mutable",
+                "name": "label",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1258:12:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 14553,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1258:6:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14556,
+                "mutability": "mutable",
+                "name": "populationCap",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1280:21:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14555,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1280:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14558,
+                "mutability": "mutable",
+                "name": "populationGrowth",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1311:24:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14557,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1311:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14560,
+                "mutability": "mutable",
+                "name": "range",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1345:13:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14559,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1345:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14562,
+                "mutability": "mutable",
+                "name": "silverGrowth",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1368:20:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14561,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1368:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14564,
+                "mutability": "mutable",
+                "name": "silverCap",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1398:17:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14563,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1398:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14566,
+                "mutability": "mutable",
+                "name": "silverMax",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1425:17:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14565,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1425:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14568,
+                "mutability": "mutable",
+                "name": "barbarianPercentage",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1452:27:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14567,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1452:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14570,
+                "mutability": "mutable",
+                "name": "energyCost",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14571,
+                "src": "1489:18:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14569,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1489:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "PlanetDefaultStats",
+            "nodeType": "StructDefinition",
+            "scope": 14587,
+            "src": "1222:292:11",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "DarkForestTypes.Upgrade",
+            "id": 14586,
+            "members": [
+              {
+                "constant": false,
+                "id": 14573,
+                "mutability": "mutable",
+                "name": "popCapMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1545:24:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14572,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1545:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14575,
+                "mutability": "mutable",
+                "name": "popGroMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1579:24:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14574,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1579:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14577,
+                "mutability": "mutable",
+                "name": "silverCapMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1613:27:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14576,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1613:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14579,
+                "mutability": "mutable",
+                "name": "silverGroMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1650:27:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14578,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1650:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14581,
+                "mutability": "mutable",
+                "name": "silverMaxMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1687:27:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14580,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1687:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14583,
+                "mutability": "mutable",
+                "name": "rangeMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1724:23:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14582,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1724:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14585,
+                "mutability": "mutable",
+                "name": "silverCostMultiplier",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 14586,
+                "src": "1757:28:11",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 14584,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1757:7:11",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Upgrade",
+            "nodeType": "StructDefinition",
+            "scope": 14587,
+            "src": "1520:272:11",
+            "visibility": "public"
+          }
+        ],
+        "scope": 14588,
+        "src": "64:1730:11"
+      }
+    ],
+    "src": "39:1756:11"
+  },
+  "bytecode": "0x60566023600b82828239805160001a607314601657fe5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122031593cbb1b638746b4e0919565e2d014f600b9bcf9df752672b93e735502cf3264736f6c634300060c0033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122031593cbb1b638746b4e0919565e2d014f600b9bcf9df752672b93e735502cf3264736f6c634300060c0033",
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang",
+    "optimizer": {
+      "enabled": false,
+      "runs": 200
+    },
+    "evmVersion": "petersburg"
+  }
+}

@@ -1,0 +1,836 @@
+{
+    "contractName": "DFDebugFacet",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "locationId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "adminFillPlanet",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"locationId\",\"type\":\"uint256\"}],\"name\":\"adminFillPlanet\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/lele/Downloads/eth-master/contracts/facets/DFDebugFacet.sol\":\"DFDebugFacet\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/lele/Downloads/eth-master/contracts/DFTypes.sol\":{\"keccak256\":\"0xc5df5f5355c2d8ef9a00f516c6d729a5f825311bb33bc2749ad8932931b8c184\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://be812e6786787d332c53c060d63c4e179eaf44a5f45c6e5d2b8fda1c52750e0f\",\"dweb:/ipfs/QmdgNdowGF3BoaMYc29S2kzdLcD7H8AgwxZvmJYWFtSmUt\"]},\"/Users/lele/Downloads/eth-master/contracts/facets/DFDebugFacet.sol\":{\"keccak256\":\"0xcd8124ef9098e5200653057b5ae732cc4eba2861358a4f3aaf687acf7039e855\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://d60fa880d0cbb9148b0db7adaffb32e7bf918c4a7fbacca072e9ecb9146f3e78\",\"dweb:/ipfs/QmTevtN5U16LQrbmd2oPujkQJDPzmcvyzSoekKXnBXb9V5\"]},\"/Users/lele/Downloads/eth-master/contracts/libraries/LibStorage.sol\":{\"keccak256\":\"0x35b1b4a35f7321594d1765afe8e041b4eeecda0d5417eb017f5dab717eac9bc5\",\"license\":\"GPL-3.0\",\"urls\":[\"bzz-raw://2c610d59e1f9a1045e1bb7b250ac866829bdc8b652324642bd7698ca517e903f\",\"dweb:/ipfs/QmbwFcVKozejNSeWz5Jknfwf4nXtUJS1smj2XA31DH9f1y\"]},\"/Users/lele/Downloads/eth-master/contracts/vendor/interfaces/IDiamondCut.sol\":{\"keccak256\":\"0xd705e2954ea5ec949167d29c73dcefcd1733c06051b368cd4344387693cd08bc\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26d94d7a5418d86f4d2b7a48bc4c7adf4e8da7c64cff0e931f88a300bd23817c\",\"dweb:/ipfs/QmRuSUgVRqZUz5ZuY8fna8k9X6KgqKkcwwPtzpp5ASQ8g3\"]},\"/Users/lele/Downloads/eth-master/contracts/vendor/libraries/LibDiamond.sol\":{\"keccak256\":\"0xd592742205dedeb1f357cb6b81af13c81c4aaf05fbeffff8425318fa3ddbc266\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://cb0de72ee77ef4dd320cab1cee91551aebda24d884be481592439c5bb23098bd\",\"dweb:/ipfs/QmZ6K9adk9gNGUvxESeZNeih2hKNUTGeCXkY2d9ADk97vc\"]}},\"version\":1}",
+    "bytecode": "608060405234801561001057600080fd5b506101eb806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80630ab4683514610030575b600080fd5b61004361003e36600461019c565b610045565b005b61004d610113565b60008181527fcb7f1a525606efcbba7baaf9b0b55c468d0fd558cbf767967f538834dfa1233c602052604090205460ff166100cf5760405162461bcd60e51b815260206004820152601960248201527f706c616e6574206973206e6f7420696e697469616c697a65640000000000000060448201526064015b60405180910390fd5b60009081527fcb7f1a525606efcbba7baaf9b0b55c468d0fd558cbf767967f538834dfa1233a60205260409020600781015460098201556005810154600490910155565b7fc8fcad8db84d3cc18b4c41d551ea0ee66dd599cde068d998e57d5e09332c131c600401546001600160a01b0316331461019a5760405162461bcd60e51b815260206004820152602260248201527f4c69624469616d6f6e643a204d75737420626520636f6e7472616374206f776e60448201526132b960f11b60648201526084016100c6565b565b6000602082840312156101ae57600080fd5b503591905056fea264697066735822122095b92fd83241570e6fde89352d15aae4fa52d2f1a5b04eb7e9b78c65bedcec9c64736f6c634300080d0033",
+    "deployedBytecode": "608060405234801561001057600080fd5b506004361061002b5760003560e01c80630ab4683514610030575b600080fd5b61004361003e36600461019c565b610045565b005b61004d610113565b60008181527fcb7f1a525606efcbba7baaf9b0b55c468d0fd558cbf767967f538834dfa1233c602052604090205460ff166100cf5760405162461bcd60e51b815260206004820152601960248201527f706c616e6574206973206e6f7420696e697469616c697a65640000000000000060448201526064015b60405180910390fd5b60009081527fcb7f1a525606efcbba7baaf9b0b55c468d0fd558cbf767967f538834dfa1233a60205260409020600781015460098201556005810154600490910155565b7fc8fcad8db84d3cc18b4c41d551ea0ee66dd599cde068d998e57d5e09332c131c600401546001600160a01b0316331461019a5760405162461bcd60e51b815260206004820152602260248201527f4c69624469616d6f6e643a204d75737420626520636f6e7472616374206f776e60448201526132b960f11b60648201526084016100c6565b565b6000602082840312156101ae57600080fd5b503591905056fea264697066735822122095b92fd83241570e6fde89352d15aae4fa52d2f1a5b04eb7e9b78c65bedcec9c64736f6c634300080d0033",
+    "sourceMap": "292:467:1:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "292:467:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;425:332;;;;;;:::i;:::-;;:::i;:::-;;;366:35;:33;:35::i;:::-;505:36:::1;::::0;;;:24;:36:::1;::::0;;;;:50;::::1;;497:88;;;::::0;-1:-1:-1;;;497:88:1;;401:2:5;497:88:1::1;::::0;::::1;383:21:5::0;440:2;420:18;;;413:30;479:27;459:18;;;452:55;524:18;;497:88:1::1;;;;;;;;;630:24;::::0;;;:12;:24:::1;::::0;;;;:34:::1;::::0;::::1;::::0;596:31:::1;::::0;::::1;:68:::0;712:38:::1;::::0;::::1;::::0;674:35:::1;::::0;;::::1;:76:::0;425:332::o;2133:156:4:-;621:45;2213:30;;;-1:-1:-1;;;;;2213:30:4;2199:10;:44;2191:91;;;;-1:-1:-1;;;2191:91:4;;755:2:5;2191:91:4;;;737:21:5;794:2;774:18;;;767:30;833:34;813:18;;;806:62;-1:-1:-1;;;884:18:5;;;877:32;926:19;;2191:91:4;553:398:5;2191:91:4;2133:156::o;14:180:5:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:5;;14:180;-1:-1:-1;14:180:5:o",
+    "sourcePath": "/Users/lele/Downloads/eth-master/contracts/facets/DFDebugFacet.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.13+commit.abaa5c0e"
+    },
+    "ast": {
+        "absolutePath": "/Users/lele/Downloads/eth-master/contracts/facets/DFDebugFacet.sol",
+        "exportedSymbols": {
+            "DFDebugFacet": [
+                435
+            ],
+            "LibDiamond": [
+                1749
+            ],
+            "WithStorage": [
+                845
+            ]
+        },
+        "id": 436,
+        "license": "GPL-3.0",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 373,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "36:23:1"
+            },
+            {
+                "absolutePath": "/Users/lele/Downloads/eth-master/contracts/vendor/libraries/LibDiamond.sol",
+                "file": "../vendor/libraries/LibDiamond.sol",
+                "id": 375,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 436,
+                "sourceUnit": 1750,
+                "src": "80:62:1",
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 374,
+                            "name": "LibDiamond",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 1749,
+                            "src": "88:10:1",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "absolutePath": "/Users/lele/Downloads/eth-master/contracts/libraries/LibStorage.sol",
+                "file": "../libraries/LibStorage.sol",
+                "id": 377,
+                "nameLocation": "-1:-1:-1",
+                "nodeType": "ImportDirective",
+                "scope": 436,
+                "sourceUnit": 846,
+                "src": "163:56:1",
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 376,
+                            "name": "WithStorage",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 845,
+                            "src": "171:11:1",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "abstract": false,
+                "baseContracts": [
+                    {
+                        "baseName": {
+                            "id": 378,
+                            "name": "WithStorage",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 845,
+                            "src": "317:11:1"
+                        },
+                        "id": 379,
+                        "nodeType": "InheritanceSpecifier",
+                        "src": "317:11:1"
+                    }
+                ],
+                "canonicalName": "DFDebugFacet",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 435,
+                "linearizedBaseContracts": [
+                    435,
+                    845
+                ],
+                "name": "DFDebugFacet",
+                "nameLocation": "301:12:1",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "body": {
+                            "id": 387,
+                            "nodeType": "Block",
+                            "src": "356:63:1",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [],
+                                        "expression": {
+                                            "argumentTypes": [],
+                                            "expression": {
+                                                "id": 381,
+                                                "name": "LibDiamond",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 1749,
+                                                "src": "366:10:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_contract$_LibDiamond_$1749_$",
+                                                    "typeString": "type(library LibDiamond)"
+                                                }
+                                            },
+                                            "id": 383,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "enforceIsContractOwner",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 981,
+                                            "src": "366:33:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_view$__$returns$__$",
+                                                "typeString": "function () view"
+                                            }
+                                        },
+                                        "id": 384,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "366:35:1",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 385,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "366:35:1"
+                                },
+                                {
+                                    "id": 386,
+                                    "nodeType": "PlaceholderStatement",
+                                    "src": "411:1:1"
+                                }
+                            ]
+                        },
+                        "id": 388,
+                        "name": "onlyAdmin",
+                        "nameLocation": "344:9:1",
+                        "nodeType": "ModifierDefinition",
+                        "parameters": {
+                            "id": 380,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "353:2:1"
+                        },
+                        "src": "335:84:1",
+                        "virtual": false,
+                        "visibility": "internal"
+                    },
+                    {
+                        "body": {
+                            "id": 433,
+                            "nodeType": "Block",
+                            "src": "487:270:1",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "expression": {
+                                                    "baseExpression": {
+                                                        "expression": {
+                                                            "arguments": [],
+                                                            "expression": {
+                                                                "argumentTypes": [],
+                                                                "id": 396,
+                                                                "name": "gs",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 784,
+                                                                "src": "505:2:1",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_GameStorage_$561_storage_ptr_$",
+                                                                    "typeString": "function () pure returns (struct GameStorage storage pointer)"
+                                                                }
+                                                            },
+                                                            "id": 397,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "kind": "functionCall",
+                                                            "lValueRequested": false,
+                                                            "names": [],
+                                                            "nodeType": "FunctionCall",
+                                                            "src": "505:4:1",
+                                                            "tryCall": false,
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_struct$_GameStorage_$561_storage_ptr",
+                                                                "typeString": "struct GameStorage storage pointer"
+                                                            }
+                                                        },
+                                                        "id": 398,
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "memberName": "planetsExtendedInfo",
+                                                        "nodeType": "MemberAccess",
+                                                        "referencedDeclaration": 519,
+                                                        "src": "505:24:1",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_PlanetExtendedInfo_$102_storage_$",
+                                                            "typeString": "mapping(uint256 => struct PlanetExtendedInfo storage ref)"
+                                                        }
+                                                    },
+                                                    "id": 400,
+                                                    "indexExpression": {
+                                                        "id": 399,
+                                                        "name": "locationId",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 390,
+                                                        "src": "530:10:1",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "nodeType": "IndexAccess",
+                                                    "src": "505:36:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_struct$_PlanetExtendedInfo_$102_storage",
+                                                        "typeString": "struct PlanetExtendedInfo storage ref"
+                                                    }
+                                                },
+                                                "id": 401,
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberName": "isInitialized",
+                                                "nodeType": "MemberAccess",
+                                                "referencedDeclaration": 76,
+                                                "src": "505:50:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "706c616e6574206973206e6f7420696e697469616c697a6564",
+                                                "id": 402,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "557:27:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_b6f88d1ac807472a88309095b38aae46d365c87467618c31ea5ad03cfe6a20ba",
+                                                    "typeString": "literal_string \"planet is not initialized\""
+                                                },
+                                                "value": "planet is not initialized"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_b6f88d1ac807472a88309095b38aae46d365c87467618c31ea5ad03cfe6a20ba",
+                                                    "typeString": "literal_string \"planet is not initialized\""
+                                                }
+                                            ],
+                                            "id": 395,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "497:7:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 403,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "497:88:1",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 404,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "497:88:1"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 417,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "expression": {
+                                                        "arguments": [],
+                                                        "expression": {
+                                                            "argumentTypes": [],
+                                                            "id": 405,
+                                                            "name": "gs",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 784,
+                                                            "src": "596:2:1",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_GameStorage_$561_storage_ptr_$",
+                                                                "typeString": "function () pure returns (struct GameStorage storage pointer)"
+                                                            }
+                                                        },
+                                                        "id": 406,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "kind": "functionCall",
+                                                        "lValueRequested": false,
+                                                        "names": [],
+                                                        "nodeType": "FunctionCall",
+                                                        "src": "596:4:1",
+                                                        "tryCall": false,
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_GameStorage_$561_storage_ptr",
+                                                            "typeString": "struct GameStorage storage pointer"
+                                                        }
+                                                    },
+                                                    "id": 407,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "planets",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 509,
+                                                    "src": "596:12:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Planet_$65_storage_$",
+                                                        "typeString": "mapping(uint256 => struct Planet storage ref)"
+                                                    }
+                                                },
+                                                "id": 409,
+                                                "indexExpression": {
+                                                    "id": 408,
+                                                    "name": "locationId",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 390,
+                                                    "src": "609:10:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "596:24:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Planet_$65_storage",
+                                                    "typeString": "struct Planet storage ref"
+                                                }
+                                            },
+                                            "id": 410,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberName": "silver",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 57,
+                                            "src": "596:31:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "expression": {
+                                                        "arguments": [],
+                                                        "expression": {
+                                                            "argumentTypes": [],
+                                                            "id": 411,
+                                                            "name": "gs",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 784,
+                                                            "src": "630:2:1",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_GameStorage_$561_storage_ptr_$",
+                                                                "typeString": "function () pure returns (struct GameStorage storage pointer)"
+                                                            }
+                                                        },
+                                                        "id": 412,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "kind": "functionCall",
+                                                        "lValueRequested": false,
+                                                        "names": [],
+                                                        "nodeType": "FunctionCall",
+                                                        "src": "630:4:1",
+                                                        "tryCall": false,
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_GameStorage_$561_storage_ptr",
+                                                            "typeString": "struct GameStorage storage pointer"
+                                                        }
+                                                    },
+                                                    "id": 413,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "planets",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 509,
+                                                    "src": "630:12:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Planet_$65_storage_$",
+                                                        "typeString": "mapping(uint256 => struct Planet storage ref)"
+                                                    }
+                                                },
+                                                "id": 415,
+                                                "indexExpression": {
+                                                    "id": 414,
+                                                    "name": "locationId",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 390,
+                                                    "src": "643:10:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "630:24:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Planet_$65_storage",
+                                                    "typeString": "struct Planet storage ref"
+                                                }
+                                            },
+                                            "id": 416,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "silverCap",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 53,
+                                            "src": "630:34:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "596:68:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 418,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "596:68:1"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 431,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "expression": {
+                                                        "arguments": [],
+                                                        "expression": {
+                                                            "argumentTypes": [],
+                                                            "id": 419,
+                                                            "name": "gs",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 784,
+                                                            "src": "674:2:1",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_GameStorage_$561_storage_ptr_$",
+                                                                "typeString": "function () pure returns (struct GameStorage storage pointer)"
+                                                            }
+                                                        },
+                                                        "id": 420,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "kind": "functionCall",
+                                                        "lValueRequested": false,
+                                                        "names": [],
+                                                        "nodeType": "FunctionCall",
+                                                        "src": "674:4:1",
+                                                        "tryCall": false,
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_GameStorage_$561_storage_ptr",
+                                                            "typeString": "struct GameStorage storage pointer"
+                                                        }
+                                                    },
+                                                    "id": 421,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "planets",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 509,
+                                                    "src": "674:12:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Planet_$65_storage_$",
+                                                        "typeString": "mapping(uint256 => struct Planet storage ref)"
+                                                    }
+                                                },
+                                                "id": 423,
+                                                "indexExpression": {
+                                                    "id": 422,
+                                                    "name": "locationId",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 390,
+                                                    "src": "687:10:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "674:24:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Planet_$65_storage",
+                                                    "typeString": "struct Planet storage ref"
+                                                }
+                                            },
+                                            "id": 424,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberName": "population",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 47,
+                                            "src": "674:35:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "expression": {
+                                                        "arguments": [],
+                                                        "expression": {
+                                                            "argumentTypes": [],
+                                                            "id": 425,
+                                                            "name": "gs",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 784,
+                                                            "src": "712:2:1",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_function_internal_pure$__$returns$_t_struct$_GameStorage_$561_storage_ptr_$",
+                                                                "typeString": "function () pure returns (struct GameStorage storage pointer)"
+                                                            }
+                                                        },
+                                                        "id": 426,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "kind": "functionCall",
+                                                        "lValueRequested": false,
+                                                        "names": [],
+                                                        "nodeType": "FunctionCall",
+                                                        "src": "712:4:1",
+                                                        "tryCall": false,
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_GameStorage_$561_storage_ptr",
+                                                            "typeString": "struct GameStorage storage pointer"
+                                                        }
+                                                    },
+                                                    "id": 427,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberName": "planets",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 509,
+                                                    "src": "712:12:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Planet_$65_storage_$",
+                                                        "typeString": "mapping(uint256 => struct Planet storage ref)"
+                                                    }
+                                                },
+                                                "id": 429,
+                                                "indexExpression": {
+                                                    "id": 428,
+                                                    "name": "locationId",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 390,
+                                                    "src": "725:10:1",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "712:24:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_Planet_$65_storage",
+                                                    "typeString": "struct Planet storage ref"
+                                                }
+                                            },
+                                            "id": 430,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberName": "populationCap",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 49,
+                                            "src": "712:38:1",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "674:76:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 432,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "674:76:1"
+                                }
+                            ]
+                        },
+                        "functionSelector": "0ab46835",
+                        "id": 434,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [
+                            {
+                                "id": 393,
+                                "kind": "modifierInvocation",
+                                "modifierName": {
+                                    "id": 392,
+                                    "name": "onlyAdmin",
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 388,
+                                    "src": "477:9:1"
+                                },
+                                "nodeType": "ModifierInvocation",
+                                "src": "477:9:1"
+                            }
+                        ],
+                        "name": "adminFillPlanet",
+                        "nameLocation": "434:15:1",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 391,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 390,
+                                    "mutability": "mutable",
+                                    "name": "locationId",
+                                    "nameLocation": "458:10:1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 434,
+                                    "src": "450:18:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 389,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "450:7:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "449:20:1"
+                        },
+                        "returnParameters": {
+                            "id": 394,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "487:0:1"
+                        },
+                        "scope": 435,
+                        "src": "425:332:1",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 436,
+                "src": "292:467:1",
+                "usedErrors": []
+            }
+        ],
+        "src": "36:724:1"
+    },
+    "functionHashes": {
+        "adminFillPlanet(uint256)": "0ab46835"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "98200",
+            "executionCost": "147",
+            "totalCost": "98347"
+        },
+        "external": {
+            "adminFillPlanet(uint256)": "53066"
+        }
+    }
+}
