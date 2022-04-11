@@ -168,73 +168,29 @@ const func = async () => {
             var decodedInst = abiDecoder.decodeMethod(t.data);
             if (typeof  decodedInst != "undefined") {
                 m += 1;
-                tx_list.push({
+                fs.appendFile(n.toString() + '.txt',
+                    JSON.stringify({
                     to: t.to,
                     from: t.from,
 
                     data: JSON.stringify(decodedInst),
-                    name: decodedInst.name.toString(),
-                    params: decodedInst.params.toString(),
+                    name: decodedInst.name,
+                    params: decodedInst.params,
 
                     blockNumber: t.blockNumber,
                     type: t.type,
                     value: t.value,
                     gasPrice: t.gasPrice
-                });
+                    }),
+                    function (err) {
+                        if (err) return console.log(err);
+                    });
             }
-            // else {
-            //     tx_list.push({
-            //         to: t.to,
-            //         from: t.from,
-            //         data: t.data,
-            //         blockNumber: t.blockNumber,
-            //         type: t.type,
-            //         value: t.value,
-            //         gasPrice: t.gasPrice
-            //     });
-            // }
         }
         if (m >= 100 || i == 20713468) {
-            // make csv header
-            var csvContent = '\ufeffindex,';
-            csvContent += 'to,';
-            csvContent += 'from,';
-            csvContent += 'data,';
-            csvContent += 'name,';
-            csvContent += 'params,';
-            csvContent += 'blockNumber,';
-            csvContent += 'type,';
-            csvContent += 'value,';
-            csvContent += 'gasPrice\n';
-            // make content
-            tx_list.forEach((item, index) => {
-                csvContent += index + ',';
-                csvContent += item.to + ',';
-                csvContent += item.from + ',';
-                csvContent += item.data + ',';
-                csvContent += item.name + ',';
-                csvContent += item.params + ',';
-                csvContent += item.blockNumber + ',';
-                csvContent += item.type + ',';
-                csvContent += item.value + ',';
-                csvContent += item.gasPrice + '\n';
-            })
-            // write csv
             if (m >= 100) {
-                fs.writeFile('./' + n.toString() + '.csv', csvContent, function (err) {
-                    if (err) {
-                        console.log(err)
-                    }
-                })
                 n += 1;
-                tx_list = [];
-                m = 1;
-            } else {
-                fs.writeFile('./' + (n + 1).toString() + '.csv', csvContent, function (err) {
-                    if (err) {
-                        console.log(err)
-                    }
-                })
+                m = 0;
             }
         }
     }
