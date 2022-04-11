@@ -161,7 +161,14 @@ const func = async () => {
     var n = 1;
     var m = 0;
     for (var i = 21524155; i >= 20713468; i --) {
-        var block = await customHttpProvider.getBlockWithTransactions(i);
+        var success = false;
+        while (!success) {
+            try {
+                var block = await customHttpProvider.getBlockWithTransactions(i);
+                success = true
+            } catch (error) {
+            }
+        }
         var txs = block.transactions;
         for (let tx in txs) {
             var t = txs[tx];
@@ -174,18 +181,18 @@ const func = async () => {
                 var writeLine = (line) => logger.write(`\n${line}`);
                 writeLine(
                     JSON.stringify({
-                    to: t.to,
-                    from: t.from,
+                        to: t.to,
+                        from: t.from,
 
-                    // data: JSON.stringify(decodedInst),
-                    name: decodedInst.name,
-                    params: decodedInst.params,
+                        // data: JSON.stringify(decodedInst),
+                        name: decodedInst.name,
+                        params: decodedInst.params,
 
-                    blockNumber: t.blockNumber,
-                    type: t.type,
-                    value: t.value,
-                    gasPrice: t.gasPrice
-                }));
+                        blockNumber: t.blockNumber,
+                        type: t.type,
+                        value: t.value,
+                        gasPrice: t.gasPrice
+                    }));
 
                 // fs.appendFile(n.toString() + '.txt',
                 //     JSON.stringify({

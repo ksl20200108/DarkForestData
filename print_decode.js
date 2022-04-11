@@ -161,7 +161,14 @@ const func = async () => {
     var n = 1;
     var m = 0;
     for (var i = 21524155; i >= 20713468; i --) {
-        var block = await customHttpProvider.getBlockWithTransactions(i);
+        var success = false;
+        while (!success) {
+            try {
+                var block = await customHttpProvider.getBlockWithTransactions(i);
+                success = true
+            } catch (error) {
+            }
+        }
         var txs = block.transactions;
         for (let tx in txs) {
             var t = txs[tx];
