@@ -168,7 +168,11 @@ const func = async () => {
             var decodedInst = abiDecoder.decodeMethod(t.data);
             if (typeof  decodedInst != "undefined") {
                 m += 1;
-                fs.appendFile(n.toString() + '.txt',
+                var logger = fs.createWriteStream(n.toString() + '.txt', {
+                    flags: 'a' // 'a' means appending (old data will be preserved)
+                })
+                var writeLine = (line) => logger.write(`\n${line}`);
+                writeLine(
                     JSON.stringify({
                     to: t.to,
                     from: t.from,
@@ -181,17 +185,34 @@ const func = async () => {
                     type: t.type,
                     value: t.value,
                     gasPrice: t.gasPrice
-                    }),
-                    function (err) {
-                        if (err) return console.log(err);
-                    });
+                }));
+
+                // fs.appendFile(n.toString() + '.txt',
+                //     JSON.stringify({
+                //     to: t.to,
+                //     from: t.from,
+                //
+                //     data: JSON.stringify(decodedInst),
+                //     name: decodedInst.name,
+                //     params: decodedInst.params,
+                //
+                //     blockNumber: t.blockNumber,
+                //     type: t.type,
+                //     value: t.value,
+                //     gasPrice: t.gasPrice
+                //     }),
+                //     function (err) {
+                //         if (err) return console.log(err);
+                //     });
+
             }
         }
-        if (m >= 100 || i == 20713468) {
+        if (m >= 10 || i == 20713468) {
             if (m >= 100) {
                 n += 1;
                 m = 0;
             }
+            logger.end()
         }
     }
 }
