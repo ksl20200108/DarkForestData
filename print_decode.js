@@ -99,6 +99,8 @@ const gnosisABIs = [
     require('./dark-forest/DFInitialize.json'),
     require('./dark-forest/Pairing.json'),
     require('./dark-forest/Verifier.json'),
+    require('./dark-forest/DarkForest.json'),
+    require('./dark-forest/DarkForest_stripped.json'),
 
     // require('./gnosis-safe/ISignatureValidator.json'),
     // require('./gnosis-safe/ERC721TokenReceiver.json'),
@@ -167,9 +169,10 @@ const func = async () => {
             // console.log(t.data);
             if (typeof  decodedInst != "undefined") {
                 console.log(JSON.stringify(decodedInst));
-            } else {
-                console.log(JSON.stringify("undefined"));
             }
+            // else {
+            //     console.log(JSON.stringify("undefined"));
+            // }
         }
     }
 }

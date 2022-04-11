@@ -99,6 +99,8 @@ const gnosisABIs = [
     require('./dark-forest/DFInitialize.json'),
     require('./dark-forest/Pairing.json'),
     require('./dark-forest/Verifier.json'),
+    require('./dark-forest/DarkForest.json'),
+    require('./dark-forest/DarkForest_stripped.json'),
 
     // require('./gnosis-safe/ISignatureValidator.json'),
     // require('./gnosis-safe/ERC721TokenReceiver.json'),
@@ -169,30 +171,37 @@ const func = async () => {
                 tx_list.push({
                     to: t.to,
                     from: t.from,
-                    data: decodedInst,
-                    blockNumber: t.blockNumber,
-                    type: t.type,
-                    value: t.value,
-                    gasPrice: t.gasPrice
-                });
-            } else {
-                tx_list.push({
-                    to: t.to,
-                    from: t.from,
-                    data: t.data,
+
+                    data: JSON.stringify(decodedInst),
+                    name: decodedInst.name.toString(),
+                    params: decodedInst.params.toString(),
+
                     blockNumber: t.blockNumber,
                     type: t.type,
                     value: t.value,
                     gasPrice: t.gasPrice
                 });
             }
+            // else {
+            //     tx_list.push({
+            //         to: t.to,
+            //         from: t.from,
+            //         data: t.data,
+            //         blockNumber: t.blockNumber,
+            //         type: t.type,
+            //         value: t.value,
+            //         gasPrice: t.gasPrice
+            //     });
+            // }
         }
-        if (m >= 100) {
+        if (m >= 100 || i == 20713468) {
             // make csv header
             var csvContent = '\ufeffindex,';
             csvContent += 'to,';
             csvContent += 'from,';
             csvContent += 'data,';
+            csvContent += 'name,';
+            csvContent += 'params,';
             csvContent += 'blockNumber,';
             csvContent += 'type,';
             csvContent += 'value,';
@@ -203,20 +212,30 @@ const func = async () => {
                 csvContent += item.to + ',';
                 csvContent += item.from + ',';
                 csvContent += item.data + ',';
+                csvContent += item.name + ',';
+                csvContent += item.params + ',';
                 csvContent += item.blockNumber + ',';
                 csvContent += item.type + ',';
                 csvContent += item.value + ',';
                 csvContent += item.gasPrice + '\n';
             })
             // write csv
-            fs.writeFile('./' + n.toString() + '.csv', csvContent, function (err) {
-                if (err) {
-                    console.log(err)
-                }
-            })
-            n += 1;
-            tx_list = [];
-            m = 1;
+            if (m >= 100) {
+                fs.writeFile('./' + n.toString() + '.csv', csvContent, function (err) {
+                    if (err) {
+                        console.log(err)
+                    }
+                })
+                n += 1;
+                tx_list = [];
+                m = 1;
+            } else {
+                fs.writeFile('./' + (n + 1).toString() + '.csv', csvContent, function (err) {
+                    if (err) {
+                        console.log(err)
+                    }
+                })
+            }
         }
     }
 }

@@ -103,9 +103,8 @@ const gnosisABIs = [
     require('./dark-forest/DFInitialize.json'),
     require('./dark-forest/Pairing.json'),
     require('./dark-forest/Verifier.json'),
-
-    // require('@darkforest_eth/contracts/abis/DarkForest_stripped.json'),
-    // require('@darkforest_eth/contracts/abis/DarkForest.json'),
+    require('./dark-forest/DarkForest.json'),
+    require('./dark-forest/DarkForest_stripped.json'),
 
     // safe-contracts
 
