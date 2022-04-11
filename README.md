@@ -43,4 +43,4 @@ INIT_ADDRESS: "0x162564a30C73204A0b404D23A033bFBA377ADdc2"
 
 START_BLOCK: 20713468
 
-(noted with credit to https://github.com/darkforest-eth/packages/tree/master/contracts)
+(credit to https://github.com/darkforest-eth/packages/tree/master/contracts)
