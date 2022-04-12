@@ -197,7 +197,7 @@ const func = async () => {
                 // console.log(block.timestamp);
             }
         }
-        if (m >= 10000 || i == 20713468) {
+        if (m >= 100000 || i == 20713468) {
             if (m >= 100) {
                 n += 1;
                 m = 0;
