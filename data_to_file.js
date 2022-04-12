@@ -183,6 +183,7 @@ const func = async () => {
                     JSON.stringify({
                         to: t.to,
                         from: t.from,
+                        time: block.timestamp,
 
                         // data: JSON.stringify(decodedInst),
                         name: decodedInst.name,
@@ -193,25 +194,7 @@ const func = async () => {
                         value: t.value,
                         gasPrice: t.gasPrice
                     }));
-
-                // fs.appendFile(n.toString() + '.txt',
-                //     JSON.stringify({
-                //     to: t.to,
-                //     from: t.from,
-                //
-                //     data: JSON.stringify(decodedInst),
-                //     name: decodedInst.name,
-                //     params: decodedInst.params,
-                //
-                //     blockNumber: t.blockNumber,
-                //     type: t.type,
-                //     value: t.value,
-                //     gasPrice: t.gasPrice
-                //     }),
-                //     function (err) {
-                //         if (err) return console.log(err);
-                //     });
-
+                // console.log(block.timestamp);
             }
         }
         if (m >= 10000 || i == 20713468) {
@@ -222,6 +205,14 @@ const func = async () => {
             logger.end()
         }
     }
+
+    // get to know whether it succeeded or not
+
+    var logger = fs.createWriteStream(n.toString() + '.txt', {
+        flags: 'a' // 'a' means appending (old data will be preserved)
+    })
+    var writeLine = (line) => logger.write(`\n${line}`);
+    writeLine("done");
 }
 
 func();
