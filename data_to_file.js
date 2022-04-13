@@ -158,7 +158,7 @@ const func = async () => {
     // console.log(JSON.stringify(data_range));
     // data_range = 100
     let tx_list = [];
-    var n = 1;
+    var n = 2;
     var m = 0;
     for (var i = 21524155; i >= 20713468; i --) {
         var success = false;
@@ -192,12 +192,13 @@ const func = async () => {
                         blockNumber: t.blockNumber,
                         type: t.type,
                         value: t.value,
-                        gasPrice: t.gasPrice
+                        gasPrice: t.gasPrice,
+                        gasUsed: block.gasUsed
                     }));
                 // console.log(block.timestamp);
             }
         }
-        if (m >= 100000 || i == 20713468) {
+        if (m >= 20000 || i == 20713468) {
             if (m >= 100) {
                 n += 1;
                 m = 0;
