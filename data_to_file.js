@@ -158,7 +158,7 @@ const func = async () => {
     // console.log(JSON.stringify(data_range));
     // data_range = 100
     let tx_list = [];
-    var n = 2;
+    var n = 1;
     var m = 0;
     for (var i = 21524155; i >= 20713468; i --) {
         var success = false;
